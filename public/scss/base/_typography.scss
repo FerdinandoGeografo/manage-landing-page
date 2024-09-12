@@ -1,0 +1,79 @@
+@font-face {
+  font-family: 'Be Vietnam';
+  font-style: normal;
+  font-weight: 100;
+  src: url('../../font/BeVietnam-Thin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Be Vietnam';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../../font/BeVietnam-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Be Vietnam';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../font/BeVietnam-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Be Vietnam';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../../font/BeVietnam-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Be Vietnam';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../../font/BeVietnam-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Be Vietnam';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../../font/BeVietnam-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Be Vietnam';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../../font/BeVietnam-ExtraBold.woff') format('woff');
+}
+
+body {
+  font-family: 'Be Vietnam', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1;
+  font-weight: 400;
+  color: var(--black-50);
+}
+
+.heading {
+  color: currentColor;
+
+  &--xl {
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 6.4rem;
+    letter-spacing: -1px;
+  }
+
+  &--lg {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 4.4rem;
+    letter-spacing: -.71px;
+  }
+}
+
+.paragraph {
+  line-height: 2.6rem;
+  color: var(--white-200);
+}

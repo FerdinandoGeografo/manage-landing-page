@@ -1,17 +1,34 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { HeaderComponent } from './shared/ui/header.component';
+import { FeaturesComponent } from './shared/ui/features.component';
+import { FooterComponent } from './shared/ui/footer.component';
+import { HeroComponent } from './shared/ui/hero.component';
+import { TestimonialsComponent } from './shared/ui/testimonials.component';
+import { CtaComponent } from './shared/ui/cta.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    HeaderComponent,
+    HeroComponent,
+    FeaturesComponent,
+    TestimonialsComponent,
+    CtaComponent,
+    FooterComponent,
+  ],
   template: `
-    <h1>Welcome to {{title}}!</h1>
+    <app-header />
 
-    <router-outlet />
+    <main class="main">
+      <app-hero />
+      <app-features />
+      <app-testimonials />
+      <app-cta />
+    </main>
+
+    <app-footer />
   `,
-  styles: [],
 })
-export class AppComponent {
-  title = 'manage-landing-page';
-}
+export class AppComponent {}
