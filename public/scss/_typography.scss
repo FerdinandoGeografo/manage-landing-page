@@ -1,50 +1,52 @@
+@use "./query-mixin" as mixin;
+
 @font-face {
   font-family: 'Be Vietnam';
   font-style: normal;
   font-weight: 100;
-  src: url('../../font/BeVietnam-Thin.woff') format('woff');
+  src: url('../font/BeVietnam-Thin.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Be Vietnam';
   font-style: normal;
   font-weight: 300;
-  src: url('../../font/BeVietnam-Light.woff') format('woff');
+  src: url('../font/BeVietnam-Light.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Be Vietnam';
   font-style: normal;
   font-weight: 400;
-  src: url('../../font/BeVietnam-Regular.woff') format('woff');
+  src: url('../font/BeVietnam-Regular.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Be Vietnam';
   font-style: normal;
   font-weight: 500;
-  src: url('../../font/BeVietnam-Medium.woff') format('woff');
+  src: url('../font/BeVietnam-Medium.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Be Vietnam';
   font-style: normal;
   font-weight: 600;
-  src: url('../../font/BeVietnam-SemiBold.woff') format('woff');
+  src: url('../font/BeVietnam-SemiBold.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Be Vietnam';
   font-style: normal;
   font-weight: 700;
-  src: url('../../font/BeVietnam-Bold.woff') format('woff');
+  src: url('../font/BeVietnam-Bold.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Be Vietnam';
   font-style: normal;
   font-weight: 800;
-  src: url('../../font/BeVietnam-ExtraBold.woff') format('woff');
+  src: url('../font/BeVietnam-ExtraBold.woff') format('woff');
 }
 
 body {
@@ -63,6 +65,11 @@ body {
     font-weight: 700;
     line-height: 6.4rem;
     letter-spacing: -1px;
+
+    @include mixin.respond(phone) {
+      font-size: 4rem;
+      line-height: 5rem;
+    }
   }
 
   &--lg {
@@ -76,4 +83,8 @@ body {
 .paragraph {
   line-height: 2.6rem;
   color: var(--white-200);
+
+  @include mixin.respond(phone) {
+    line-height: 2.8rem;
+  }
 }

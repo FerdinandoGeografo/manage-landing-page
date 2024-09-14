@@ -25,9 +25,21 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
         </li>
       </ul>
     </nav>
+
+    <button class="nav-btn">
+    </button>
   `,
   styles: `
-    .nav {
+    @use "../../../../public/scss/_query-mixin.scss" as mixin;
+     .nav {
+      @include mixin.respond(phone) {
+        /* opacity: 0;
+        pointer-events: none;
+        visibility: hidden; */
+        display: none;
+        position: absolute;
+      }
+
       &__list {
         display: flex;
         align-items: center;
@@ -63,6 +75,22 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
             transform: scaleX(1);
           }
         }
+      }
+    }
+
+    .nav-btn {
+      display: none;
+      background-image: url('/images/icon-hamburger.svg'), linear-gradient(to top, white, white);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      border: none;
+      outline: 0 none;
+      width: 2.4rem;
+      height: 2.4rem;
+
+      @include mixin.respond(phone) {
+        display: block;
       }
     }
   `,

@@ -8,7 +8,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   template: `
     <footer class="footer">
       <div class="footer__content">
-        <svg xmlns="http://www.w3.org/2000/svg" width="146" height="24">
+        <svg class="footer__logo" xmlns="http://www.w3.org/2000/svg" width="146" height="24">
           <g fill="none" fill-rule="evenodd">
             <path
               fill="var(--white-100)"
@@ -122,6 +122,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     </footer>
   `,
   styles: `
+    @use "../../../../public/scss/_query-mixin.scss" as mixin;
+
     .footer {
       background: var(--black-500);
 
@@ -133,6 +135,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
         display: grid;
         grid-template-columns: auto 1fr auto;
         grid-template-rows: auto auto;
+
+        @include mixin.respond(phone) {
+          padding: 5.1rem 2.4rem 3rem;
+          grid-template-columns: 1fr;
+        }
       }
 
       &__links {
@@ -142,6 +149,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         row-gap: 1.3rem;
+
+        @include mixin.respond(phone) {
+          grid-column: 1 / -1;
+          margin-left: unset;
+        }
       }
 
       &__link {
@@ -225,6 +237,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
         grid-column: 3 / -1;
         align-self: end;
         justify-self: end;
+
+        @include mixin.respond(phone) {
+          grid-column: 1 / -1;
+        }
       }
     }
   `,

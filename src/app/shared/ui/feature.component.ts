@@ -20,6 +20,8 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
     </div>
   `,
   styles: `
+    @use "../../../../public/scss/_query-mixin.scss" as mixin;
+
     .feature {
       --step-width: 6.7rem;
       --text-width: 44.5rem;
@@ -28,6 +30,25 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
       grid-template-rows: auto auto;
       column-gap: 2.8rem;
       row-gap: .9rem;
+
+      @include mixin.respond(phone) {
+        --text-width: 1fr;
+        padding-left: 1.6rem;
+        column-gap: 1.5rem;
+        row-gap: .8rem;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          background: var(--orange-50);
+          height: 3.9rem;
+          left: 1.6rem;
+          right: 0;
+          z-index: -1;
+          border-radius: 4rem 0 0 4rem;
+        }
+      }
 
       &__step {
         background: var(--orange-300);
@@ -43,6 +64,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
       }
 
       &__title {
+        font-size: 1.6rem;
         font-weight: 700;
         line-height: 2.3rem;
         letter-spacing: -.29px;
@@ -51,6 +73,12 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
       .paragraph {
         grid-column: 2 / -1;
+
+        @include mixin.respond(phone) {
+          grid-column: 1 / -1;
+          font-size: 1.4rem;
+          padding-right: 1.8rem;
+        }
       }
     }
   `,

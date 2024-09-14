@@ -40,6 +40,8 @@ import { FeatureComponent } from './feature.component';
     </section>
   `,
   styles: `
+    @use "../../../../public/scss/_query-mixin.scss" as mixin;
+
     .features {
       &__content {
         max-width: 144rem;
@@ -48,12 +50,34 @@ import { FeatureComponent } from './feature.component';
         padding: 0 16.5rem 14.6rem;
         display: flex;
         gap: 12.5rem;
+
+        @include mixin.respond(phone) {
+          padding: 0 0 6.2rem;
+          flex-direction: column;
+          gap: 5.4rem;
+        }
       }
 
       &__text-box {
         display: flex;
         flex-direction: column;
         gap: 2.4rem;
+
+        @include mixin.respond(phone) {
+          padding: 0 2.2rem;
+          text-align: center;
+          gap: 1.3rem;
+
+          .heading--lg {
+            font-size: 3rem;
+            line-height: 4.5rem;
+          }
+
+          .paragraph {
+            font-size: 1.4rem;
+            padding: 0 .5rem;
+          }
+        }
 
         .paragraph {
           max-width: 35rem;
@@ -64,6 +88,10 @@ import { FeatureComponent } from './feature.component';
         display: flex;
         flex-direction: column;
         gap: 4rem;
+
+        @include mixin.respond(phone) {
+          gap: 4.7rem;
+        }
       }
     }
   `,

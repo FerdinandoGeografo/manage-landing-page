@@ -18,6 +18,8 @@ import { ButtonComponent } from './button.component';
     </section>
   `,
   styles: `
+    @use "../../../../public/scss/_query-mixin.scss" as mixin;
+
     .cta {
       background: var(--orange-300);
       background-image: url('/images/bg-simplify-section-desktop.svg');
@@ -35,10 +37,24 @@ import { ButtonComponent } from './button.component';
         align-items: center;
         justify-content: space-between;
 
+        @include mixin.respond(phone) {
+          padding: 9.1rem 3.2rem;
+          display: flex;
+          flex-direction: column;
+          gap: 2.9rem;
+        }
+
         .heading--lg {
           max-width: 44.5rem;
-          height: 9.6rem;
+          line-height: 4.8rem;
           color: var(--white-100);
+
+          @include mixin.respond(phone) {
+            font-size: 4rem;
+            line-height: 5rem;
+            letter-spacing: 1px;
+            text-align: center;
+          }
         }
       }
     }

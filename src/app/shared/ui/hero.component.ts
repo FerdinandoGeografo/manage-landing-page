@@ -20,10 +20,12 @@ import { ButtonComponent } from './button.component';
 
         <a app-button href="#">Get started</a>
       </div>
-      <img src="images/illustration-intro.svg" alt="hero image" />
+      <img class="hero__img" src="images/illustration-intro.svg" alt="hero image" />
     </section>
   `,
   styles: `
+    @use "../../../../public/scss/_query-mixin.scss" as mixin;
+
     .hero {
       max-width: 144rem;
       width: 100%;
@@ -32,11 +34,35 @@ import { ButtonComponent } from './button.component';
       display: flex;
       align-items: center;
 
+      @include mixin.respond(phone) {
+        padding: 0 2.6rem 9.3rem;
+        flex-direction: column;
+        gap: 1.9rem;
+      }
+
       &__text-box {
+        display: flex;
+        flex-direction: column;
+
+        @include mixin.respond(phone) {
+          align-items: center;
+          text-align: center;
+          order: 1;
+        }
+
         .paragraph {
           margin: 3.4rem 0 4rem;
           max-width: 35rem;
+
+          @include mixin.respond(phone) {
+            font-weight: 300;
+            margin: .9rem 0 2.9rem;
+          }
         }
+      }
+
+      &__img {
+        width: 100%;
       }
     }
   `,

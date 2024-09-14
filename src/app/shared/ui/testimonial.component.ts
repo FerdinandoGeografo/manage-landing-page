@@ -26,11 +26,17 @@ import {
     </figure>
   `,
   styles: `
+    @use "../../../../public/scss/_query-mixin.scss" as mixin;
+
     .testimonial {
       background: var(--white-150);
       padding: 6rem 4rem 4rem;
       max-width: 54rem;
       position: relative;
+
+      @include mixin.respond(phone) {
+        padding: 6rem 2.1rem 4.2rem;
+      }
 
       &__avatar {
         position: absolute;
@@ -55,6 +61,11 @@ import {
 
       .paragraph {
         text-align: center;
+
+        @include mixin.respond(phone) {
+          font-size: 1.4rem;
+          line-height: 2.6rem;
+        }
       }
     }
   `,

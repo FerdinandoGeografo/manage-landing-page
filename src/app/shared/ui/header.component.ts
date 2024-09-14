@@ -13,10 +13,12 @@ import { NavigationComponent } from './navigation.component';
 
       <app-navigation />
 
-      <a app-button href="#">Get started</a>
+      <a class="header__btn" app-button href="#">Get started</a>
     </header>
   `,
   styles: `
+    @use "../../../../public/scss/_query-mixin.scss" as mixin;
+
     .header {
       padding: 5.6rem 16.5rem 12rem;
       max-width: 144rem;
@@ -24,6 +26,17 @@ import { NavigationComponent } from './navigation.component';
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: relative;
+
+      @include mixin.respond(phone) {
+        padding: 4.1rem 2.4rem 4.8rem;
+        align-items: end;
+
+        a.header__btn {
+          display: none;
+        }
+      }
+
     }
   `,
 })
