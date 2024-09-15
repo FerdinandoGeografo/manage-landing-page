@@ -30,6 +30,13 @@ import { ButtonComponent } from './button.component';
         /> -->
       </div>
 
+      <nav class="testimonials__nav">
+        <a class="testimonials__link" href="#"></a>
+        <a class="testimonials__link" href="#"></a>
+        <a class="testimonials__link" href="#"></a>
+        <a class="testimonials__link" href="#"></a>
+      </nav>
+
       <a app-button href="#">Get started</a>
     </section>
   `,
@@ -59,12 +66,55 @@ import { ButtonComponent } from './button.component';
       }
 
       &__list {
+        /* min-width: 225rem; */
         display: flex;
         align-items: center;
         gap: 3rem;
         margin-bottom: 4.8rem;
+        /* will-change: transform;
+        animation: scrolling 4s linear infinite; */
+
+        @include mixin.respond(phone) {
+          margin-bottom: 2.6rem;
+        }
+      }
+
+      &__nav {
+        display: none;
+
+        @include mixin.respond(phone) {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: .5rem;
+          margin-bottom: 4.7rem;
+        }
+      }
+
+      &__link {
+        &:link, &:visited {
+          width: .7rem;
+          height: .7rem;
+          border: 1px solid var(--orange-300);
+          border-radius: 50%;
+          transition: all .4s;
+        }
+
+        &:hover, &:active {
+          background: var(--orange-300);
+        }
       }
     }
+
+    /* @keyframes scrolling {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    } */
   `,
 })
 export class TestimonialsComponent {}

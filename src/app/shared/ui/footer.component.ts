@@ -8,7 +8,12 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   template: `
     <footer class="footer">
       <div class="footer__content">
-        <svg class="footer__logo" xmlns="http://www.w3.org/2000/svg" width="146" height="24">
+        <svg
+          class="footer__logo"
+          xmlns="http://www.w3.org/2000/svg"
+          width="146"
+          height="24"
+        >
           <g fill="none" fill-rule="evenodd">
             <path
               fill="var(--white-100)"
@@ -139,6 +144,14 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
         @include mixin.respond(phone) {
           padding: 5.1rem 2.4rem 3rem;
           grid-template-columns: 1fr;
+          place-items: center;
+        }
+      }
+
+      &__logo {
+        @include mixin.respond(phone) {
+          order: 4;
+          margin-bottom: 5rem;
         }
       }
 
@@ -152,7 +165,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 
         @include mixin.respond(phone) {
           grid-column: 1 / -1;
-          margin-left: unset;
+          grid-row: unset;
+          margin: 0 0 5rem 0;
+          order: 2;
         }
       }
 
@@ -171,11 +186,17 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
       }
 
       &__form {
-        display: flex;
-        align-items: center;
-        gap: .8rem;
+        display: grid;
+        grid-template-columns: 20rem 6.4rem;
+        column-gap: .8rem;
         align-self: start;
         margin-top: 3px;
+
+        @include mixin.respond(phone) {
+          grid-template-columns: 23.9rem 8rem;
+          margin: 0 0 5.4rem 0;
+          order: 1;
+        }
       }
 
       &__input {
@@ -187,7 +208,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
         padding: 1.15rem 1.6rem;
         border: 1px solid transparent;
         border-radius: 2.2rem;
-        min-width: 20rem;
         outline: 0 none;
         transition: all .3s;
 
@@ -197,7 +217,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
       }
 
       &__btn {
-        min-width: 6.4rem;
         outline: 0 none;
         border: 0 none;
         border-radius: 2.2rem;
@@ -214,6 +233,12 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
         display: flex;
         align-items: center;
         gap: 1.3rem;
+
+        @include mixin.respond(phone) {
+          order: 3;
+          gap: 3.4rem;
+          margin-bottom: 5.4rem;
+        }
       }
 
       &__icon {
@@ -240,6 +265,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 
         @include mixin.respond(phone) {
           grid-column: 1 / -1;
+          order: 5;
+          justify-self: center;
         }
       }
     }

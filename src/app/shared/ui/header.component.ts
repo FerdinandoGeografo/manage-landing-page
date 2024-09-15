@@ -26,7 +26,6 @@ import { NavigationComponent } from './navigation.component';
       display: flex;
       align-items: center;
       justify-content: space-between;
-      position: relative;
 
       @include mixin.respond(phone) {
         padding: 4.1rem 2.4rem 4.8rem;

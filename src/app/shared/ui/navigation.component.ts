@@ -1,12 +1,18 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { NgClass } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  signal,
+} from '@angular/core';
 
 @Component({
   selector: 'app-navigation',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [],
+  imports: [NgClass],
   template: `
-    <nav class="nav">
+    <nav class="nav" [ngClass]="navClass()">
       <ul class="nav__list">
         <li>
           <a class="nav__link" href="#">Pricing</a>
@@ -26,24 +32,50 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
       </ul>
     </nav>
 
-    <button class="nav-btn">
-    </button>
+    <button class="nav-btn" (click)="isOpen.set(!isOpen())"></button>
   `,
   styles: `
     @use "../../../../public/scss/_query-mixin.scss" as mixin;
-     .nav {
+
+    /* :host:has(.nav__open)::before {
+      content: "";
+      background: linear-gradient(to bottom, transparent, rgba(0,0,0, 60%));
+      position: fixed;
+      inset: 0;
+    } */
+
+    .nav {
       @include mixin.respond(phone) {
-        /* opacity: 0;
+        opacity: 0;
         pointer-events: none;
-        visibility: hidden; */
-        display: none;
+        visibility: hidden;
+
+        background: var(--white-100);
         position: absolute;
+        inset: 10.3rem 2.4rem auto 2.4rem;
+        padding: 4rem 0;
+        border-radius: 4px;
+        box-shadow: 0 1rem 2rem var(--white-50);
+        transition: all .3s;
+        transform: translateY(-200%);
+
+        &__open {
+          opacity: 1;
+          pointer-events: auto;
+          visibility: visible;
+          transform: translateY(0);
+        }
       }
 
       &__list {
         display: flex;
         align-items: center;
         gap: 3.2rem;
+
+        @include mixin.respond(phone) {
+          flex-direction: column;
+          gap: 2.4rem;
+        }
       }
 
       &__link {
@@ -65,6 +97,13 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
             background: var(--orange-300);
             transform: scaleX(0);
             transition: all .3s;
+          }
+
+          @include mixin.respond(phone) {
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 2.3rem;
+            letter-spacing: -.29px;
           }
         }
 
@@ -88,6 +127,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
       outline: 0 none;
       width: 2.4rem;
       height: 2.4rem;
+      cursor: pointer;
 
       @include mixin.respond(phone) {
         display: block;
@@ -95,4 +135,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     }
   `,
 })
-export class NavigationComponent {}
+export class NavigationComponent {
+  protected isOpen = signal<boolean>(false);
+  protected navClass = computed(() => ({ nav__open: this.isOpen() }));
+}

@@ -65,6 +65,7 @@ import { FeatureComponent } from './feature.component';
 
         @include mixin.respond(phone) {
           padding: 0 2.2rem;
+          align-items: center;
           text-align: center;
           gap: 1.3rem;
 

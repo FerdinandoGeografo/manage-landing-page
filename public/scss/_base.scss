@@ -1,3 +1,5 @@
+@use "./query-mixin" as mixin;
+
 *,
 *::after,
 *::before {
@@ -31,9 +33,53 @@ ul {
 
 html {
   font-size: 10px;
+  overflow-x: hidden;
 }
 
 body {
+  position: relative;
   box-sizing: border-box;
   overflow-x: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--orange-50);
+    width: 43.6rem;
+    height: 97rem;
+    border-radius: 40rem;
+    top: -23.1rem;
+    right: 4.3rem;
+    transform: rotate(45deg);
+    transition: all .4s;
+
+    @include mixin.respond(phone) {
+      width: 24.4rem;
+      height: 54.2rem;
+      top: -15.7rem;
+      right: -3.1rem;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--orange-50);
+    width: 43.6rem;
+    height: 99.5rem;
+    border-radius: 40rem;
+    top: 104.096rem;
+    left: -32.346rem;
+    transform: rotate(45deg);
+    transition: all .4s;
+
+    @include mixin.respond(phone) {
+      width: 17rem;
+      height: 37.8rem;
+      top: 48.7rem;
+      left: 31.5rem;
+    }
+  }
 }

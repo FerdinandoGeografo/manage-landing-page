@@ -20,7 +20,11 @@ import { ButtonComponent } from './button.component';
 
         <a app-button href="#">Get started</a>
       </div>
-      <img class="hero__img" src="images/illustration-intro.svg" alt="hero image" />
+      <img
+        class="hero__img"
+        src="images/illustration-intro.svg"
+        alt="hero image"
+      />
     </section>
   `,
   styles: `
@@ -33,6 +37,8 @@ import { ButtonComponent } from './button.component';
       padding: 0 16.5rem 13.2rem;
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
 
       @include mixin.respond(phone) {
         padding: 0 2.6rem 9.3rem;
@@ -43,6 +49,7 @@ import { ButtonComponent } from './button.component';
       &__text-box {
         display: flex;
         flex-direction: column;
+        max-width: 44.5rem;
 
         @include mixin.respond(phone) {
           align-items: center;
@@ -62,7 +69,7 @@ import { ButtonComponent } from './button.component';
       }
 
       &__img {
-        width: 100%;
+        max-width: 100%;
       }
     }
   `,
