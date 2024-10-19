@@ -59,10 +59,10 @@ body {
 
 .heading {
   color: currentColor;
+  font-weight: 700;
 
   &--xl {
     font-size: 5.6rem;
-    font-weight: 700;
     line-height: 6.4rem;
     letter-spacing: -1px;
 
@@ -74,15 +74,25 @@ body {
 
   &--lg {
     font-size: 4rem;
-    font-weight: 700;
     line-height: 4.4rem;
     letter-spacing: -.71px;
+  }
+
+  &--md {
+    font-size: 1.6rem;
+    line-height: 2.3rem;
+    letter-spacing: -.29px;
+  }
+
+  &--sm {
+    font-size: 1.3rem;
+    line-height: 1.9rem;
   }
 }
 
 .paragraph {
   line-height: 2.6rem;
-  color: var(--white-200);
+  color: var(--blue-400);
 
   @include mixin.respond(phone) {
     line-height: 2.8rem;

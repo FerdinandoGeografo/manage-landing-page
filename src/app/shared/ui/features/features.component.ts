@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { FeatureComponent } from './feature.component';
+import { FeatureComponent } from './feature/feature.component';
 
 @Component({
   selector: 'app-features',
@@ -8,7 +8,7 @@ import { FeatureComponent } from './feature.component';
   imports: [FeatureComponent],
   template: `
     <section class="features">
-      <div class="features__content">
+      <div class="container features__content">
         <div class="features__text-box">
           <h2 class="heading heading--lg">What's different about Manage?</h2>
 
@@ -39,62 +39,6 @@ import { FeatureComponent } from './feature.component';
       </div>
     </section>
   `,
-  styles: `
-    @use "../../../../public/scss/_query-mixin.scss" as mixin;
-
-    .features {
-      &__content {
-        max-width: 144rem;
-        width: 100%;
-        margin: 0 auto;
-        padding: 0 16.5rem 14.6rem;
-        display: flex;
-        gap: 12.5rem;
-
-        @include mixin.respond(phone) {
-          padding: 0 0 6.2rem;
-          flex-direction: column;
-          gap: 5.4rem;
-        }
-      }
-
-      &__text-box {
-        display: flex;
-        flex-direction: column;
-        gap: 2.4rem;
-
-        @include mixin.respond(phone) {
-          padding: 0 2.2rem;
-          align-items: center;
-          text-align: center;
-          gap: 1.3rem;
-
-          .heading--lg {
-            font-size: 3rem;
-            line-height: 4.5rem;
-          }
-
-          .paragraph {
-            font-size: 1.4rem;
-            padding: 0 .5rem;
-          }
-        }
-
-        .paragraph {
-          max-width: 35rem;
-        }
-      }
-
-      &__list {
-        display: flex;
-        flex-direction: column;
-        gap: 4rem;
-
-        @include mixin.respond(phone) {
-          gap: 4.7rem;
-        }
-      }
-    }
-  `,
+  styleUrl: './features.component.scss',
 })
 export class FeaturesComponent {}

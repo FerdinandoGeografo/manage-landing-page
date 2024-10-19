@@ -1,0 +1,198 @@
+@use "../../../../../public/scss/_query-mixin.scss" as mixin;
+
+.footer {
+  background: var(--black-500);
+
+  &__content {
+    padding: 6.15rem 16.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+
+    @include mixin.respond(phone) {
+      padding: 5.1rem 2.4rem 3rem;
+      grid-template-columns: 1fr;
+      place-items: center;
+    }
+  }
+
+  &__logo {
+    @include mixin.respond(phone) {
+      order: 4;
+      margin-bottom: 5rem;
+      height: 2.6rem;
+    }
+  }
+
+  &__links {
+    grid-column: 2 / 3;
+    grid-row: 1 / -1;
+    margin-left: 12.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1.3rem;
+
+    @include mixin.respond(phone) {
+      grid-column: 1 / -1;
+      grid-row: unset;
+      margin: 0 0 5rem 0;
+      order: 2;
+      column-gap: 30vw;
+    }
+  }
+
+  &__link {
+
+    &:link,
+    &:visited {
+      font-size: 1.5rem;
+      font-weight: 300;
+      line-height: 2.2rem;
+      outline: 0 none;
+      color: var(--white-100);
+      transition: all 0.3s;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: var(--orange-300);
+    }
+  }
+
+  &__form {
+    width: 100%;
+    display: flex;
+    gap: 0.8rem;
+    align-self: start;
+    margin-top: 3px;
+    position: relative;
+
+    @include mixin.respond(phone) {
+      margin: 0 0 5.4rem 0;
+      order: 1;
+    }
+  }
+
+  &__input {
+    flex: 1 0 20rem;
+    font-family: inherit;
+    font-weight: 300;
+    letter-spacing: -0.1px;
+    padding: 1.15rem 1.6rem;
+    border: 1px solid transparent;
+    border-radius: 2.2rem;
+    outline: 0 none;
+    transition: all 0.3s;
+
+    @include mixin.respond(phone) {
+      flex: 1 1 23.9rem;
+    }
+
+    &::placeholder {
+      color: var(--gray-500);
+    }
+
+    &:valid {
+
+      &:hover,
+      &:active,
+      &:focus {
+        border-color: var(--orange-300);
+      }
+    }
+
+    &:invalid {
+
+      &:hover,
+      &:active,
+      &:focus {
+        border-color: var(--red-400);
+      }
+    }
+  }
+
+  &__btn {
+    flex: 1 0 6.4rem;
+
+    @include mixin.respond(phone) {
+      flex: 1 1 8rem;
+    }
+  }
+
+  &__input-error {
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: var(--red-400);
+    position: absolute;
+    bottom: -4px;
+    left: 1.6rem;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all .3s;
+
+    &--shown {
+      opacity: 1;
+    }
+  }
+
+  &__icons {
+    align-self: end;
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+
+    @include mixin.respond(phone) {
+      order: 3;
+      gap: 3.4rem;
+      margin-bottom: 5.4rem;
+
+      li {
+        height: 3.2rem;
+      }
+    }
+  }
+
+  &__icon {
+
+    &:link,
+    &:visited {
+      outline: 0 none;
+      color: var(--white-100);
+      transition: all 0.3s;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: var(--orange-300);
+    }
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+
+      @include mixin.respond(phone) {
+        width: 3.2rem;
+        height: 3.2rem;
+      }
+    }
+  }
+
+  &__copyright {
+    font-weight: 400;
+    letter-spacing: -0.2px;
+    color: var(--white-100);
+    opacity: 50.25%;
+    grid-column: 3 / -1;
+    align-self: end;
+    justify-self: end;
+
+    @include mixin.respond(phone) {
+      grid-column: 1 / -1;
+      order: 5;
+      justify-self: center;
+    }
+  }
+}

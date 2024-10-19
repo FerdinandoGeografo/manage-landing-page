@@ -41,18 +41,22 @@ body {
   box-sizing: border-box;
   overflow-x: hidden;
 
-  &::before {
+  &::before,
+  &::after {
     content: "";
     position: absolute;
-    z-index: -1;
     background: var(--orange-50);
+    z-index: -1;
     width: 43.6rem;
-    height: 97rem;
     border-radius: 40rem;
-    top: -23.1rem;
-    right: 4.3rem;
     transform: rotate(45deg);
     transition: all .4s;
+  }
+
+  &::before {
+    height: 97rem;
+    top: -23.1rem;
+    right: 4.3rem;
 
     @include mixin.respond(phone) {
       width: 24.4rem;
@@ -63,17 +67,9 @@ body {
   }
 
   &::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    background: var(--orange-50);
-    width: 43.6rem;
     height: 99.5rem;
-    border-radius: 40rem;
     top: 104.096rem;
     left: -32.346rem;
-    transform: rotate(45deg);
-    transition: all .4s;
 
     @include mixin.respond(phone) {
       width: 17rem;

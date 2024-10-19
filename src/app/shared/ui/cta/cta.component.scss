@@ -1,0 +1,39 @@
+
+@use "../../../../../public/scss/_query-mixin.scss" as mixin;
+
+.cta {
+  background: var(--orange-300);
+  background-image: url('/images/bg-simplify-section-desktop.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: bottom;
+  background-position-x: 17.65vw;
+
+  &__content {
+    padding: 6.2rem 16.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+
+    @include mixin.respond(phone) {
+      padding: 9.1rem 3.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.9rem;
+    }
+
+    .heading--lg {
+      max-width: 44.5rem;
+      line-height: 4.8rem;
+      color: var(--white-100);
+
+      @include mixin.respond(phone) {
+        font-size: 4rem;
+        line-height: 5rem;
+        letter-spacing: 1px;
+        text-align: center;
+      }
+    }
+  }
+}

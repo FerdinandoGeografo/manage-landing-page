@@ -1,0 +1,70 @@
+:host.btn {
+  &,
+  &:link,
+  &:visited {
+    cursor: pointer;
+    padding: 1.25rem 0;
+    border: 0 none;
+    outline: 0 none;
+    border-radius: 2.2rem;
+
+    max-width: 13.7rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s;
+  }
+
+  &--shadow-none {
+    box-shadow: none !important;
+  }
+
+  &--primary {
+    box-shadow: 0 1.5rem 1.5rem -1rem var(--orange-300);
+    background: var(--orange-300);
+    color: var(--white-300);
+
+    &:hover, &:active, &:focus {
+      background: var(--orange-100);
+    }
+  }
+
+  &--secondary {
+    box-shadow: 0 1.5rem 1.5rem -1rem var(--orange-500);
+    background: var(--white-100);
+    color: var(--orange-300);
+
+    &:hover, &:active, &:focus {
+      color: var(--orange-100);
+    }
+  }
+
+  &--icon {
+    padding: 0;
+    background: transparent;
+    width: 2.4rem;
+    height: 2.4rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 4rem;
+      height: 4rem;
+      background: transparent;
+      border-radius: 50%;
+      transition: all .4s;
+    }
+
+    &:hover, &:active, &:focus {
+      &::after {
+        background: var(--orange-200);
+      }
+    }
+  }
+}

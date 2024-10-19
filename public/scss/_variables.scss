@@ -1,14 +1,23 @@
 :root {
-  --white-50: rgb(80, 86, 98, 10%);
+  --max-width: 144rem;
+
   --white-100: #fff;
   --white-150: #fafafa;
-  --white-200: rgb(36, 45, 82, 50.25%);
   --white-300: #fcf6f5;
-  --white-500: #8d8d8d;
+
+  --gray-200: rgb(80, 86, 98, 10%);
+  --gray-500: #8d8d8d;
+
+  --blue-400: rgb(36, 45, 82, 50.25%);
+
   --orange-50: #fff0ec;
   --orange-100: #ff9f8e;
+  --orange-200: #fcd5cd;
   --orange-300: #f3603c;
   --orange-500: #db5943;
+
+  --red-400: #f33c3c;
+
   --black-50: #242d52;
   --black-500: #1d1e25;
 }
