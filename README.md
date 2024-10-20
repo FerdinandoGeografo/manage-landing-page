@@ -53,3 +53,8 @@ Users should be able to:
 - Frontend Mentor - [@FerdinandoGeografo](https://www.frontendmentor.io/profile/FerdinandoGeografo)
 - LinkedIn - [@FerdinandoGeografo](https://www.linkedin.com/in/ferdinandogeografo/)
 - GitHub - [@FerdinandoGeografo](https://github.com/FerdinandoGeografo/)
+
+### TODO
+
+- Aggiustare le decoration con posizioni legate anche alla dimensione della viewport e agli elementi giusti e non al body
+- Compilare README, testing e deploy finale

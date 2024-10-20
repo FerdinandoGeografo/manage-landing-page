@@ -11,6 +11,10 @@
     padding-bottom: 3px;
   }
 
+  @include mixin.respond(desktop) {
+    padding-inline: 4.125rem;
+  }
+
   @include mixin.respond(phone) {
     padding: 4.1rem 2.4rem 4.8rem;
     align-items: end;

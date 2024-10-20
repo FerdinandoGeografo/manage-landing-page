@@ -16,22 +16,26 @@ import {
       <img
         class="testimonial__avatar"
         [src]="avatarSrc()"
-        [alt]="author() + ' profile image'"
+        [alt]="testimonial().author + ' profile image'"
       />
 
       <div class="testimonial__content">
-        <p class="testimonial__name">{{ author() | titlecase }}</p>
-        <blockquote class="paragraph">{{ quote() }}</blockquote>
+        <p class="testimonial__name">{{ testimonial().author | titlecase }}</p>
+        <blockquote class="paragraph">{{ testimonial().quote }}</blockquote>
       </div>
     </figure>
   `,
   styleUrl: './testimonial.component.scss',
 })
 export class TestimonialComponent {
-  author = input.required<string>();
-  quote = input.required<string>();
+  testimonial = input.required<Testimonial>();
 
   protected avatarSrc = computed(
-    () => `images/avatar-${this.author().toLowerCase().split(' ')[0]}.png`
+    () => `images/avatar-${this.testimonial().author.toLowerCase().split(' ')[0]}.png`
   );
+}
+
+export interface Testimonial {
+  author: string;
+  quote: string;
 }

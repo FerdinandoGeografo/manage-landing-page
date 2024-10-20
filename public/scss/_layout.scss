@@ -1,5 +1,53 @@
+@use "./query-mixin" as mixin;
+
 .container {
   max-width: var(--max-width);
   width: 100%;
   margin: 0 auto;
+}
+
+.decoration {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    background: var(--orange-50);
+    z-index: -1;
+    width: 43.6rem;
+    border-radius: 40rem;
+    transform: rotate(45deg);
+    transition: all .4s;
+  }
+
+  &--right {
+    &::after {
+      height: 97rem;
+      bottom: -3.4rem;
+      right: -12.2rem;
+
+
+      @include mixin.respond(phone) {
+        width: 24.4rem;
+        height: 54.2rem;
+        bottom: 1.2rem;
+        right: -5.9rem;
+      }
+    }
+  }
+
+  &--left {
+    &::after {
+      height: 99.5rem;
+      top: 104.096rem;
+      left: -32.346rem;
+
+      @include mixin.respond(phone) {
+        width: 17rem;
+        height: 37.8rem;
+        top: 48.7rem;
+        left: 31.5rem;
+      }
+    }
+  }
 }

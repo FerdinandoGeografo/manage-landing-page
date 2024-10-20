@@ -20,11 +20,13 @@ import { ButtonComponent } from '../button/button.component';
 
         <a app-button href="#">Get started</a>
       </div>
-      <img
-        class="hero__img"
-        src="images/illustration-intro.svg"
-        alt="Illustration of diagram and statistics"
-      />
+      <div class="decoration decoration--right">
+        <img
+          class="hero__img"
+          src="images/illustration-intro.svg"
+          alt="Illustration of diagram and statistics"
+        />
+      </div>
     </section>
   `,
   styleUrl: './hero.component.scss',

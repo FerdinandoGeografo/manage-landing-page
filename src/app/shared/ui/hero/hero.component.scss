@@ -7,9 +7,13 @@
   justify-content: space-between;
   gap: 2rem;
 
+  @include mixin.respond(desktop) {
+    padding-inline: 4.125rem;
+    gap: 6.4rem;
+  }
+
   @include mixin.respond(phone) {
     padding: 0 2.6rem 9.3rem;
-    flex-direction: column;
     gap: 1.9rem;
   }
 
