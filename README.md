@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Screenshot
 
-![https://manage-fg.netlify.app/](./screenshot-desktop.jpg)
+![https://manage-fg.netlify.app/](./screenshot.jpg)
 
 ### Links
 
