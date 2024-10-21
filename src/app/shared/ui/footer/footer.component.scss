@@ -199,4 +199,50 @@
       justify-self: center;
     }
   }
+
+  .attribution {
+    padding: 0 2rem 2rem;
+    color: var(--white-100);
+    font-weight: 300;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    @include mixin.respond(phone) {
+      flex-direction: column;
+    }
+
+    &__link {
+
+      &:link,
+      &:visited {
+        color: var(--orange-500);
+        position: relative;
+        outline: none;
+        font-weight: 600;
+
+        &::after {
+          content: "";
+          position: absolute;
+          height: 1px;
+          width: 100%;
+          left: 0;
+          bottom: -2.5px;
+          background: var(--orange-500);
+          transform: scaleX(0);
+          transition: all .3s;
+        }
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
 }

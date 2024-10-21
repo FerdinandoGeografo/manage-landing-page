@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/FerdinandoGeografo/manage-landing-page.git](https://github.com/FerdinandoGeografo/manage-landing-page.git)
-- Live Site URL: [https://manage-fg.netlify.app](https://manage-fg-fg.netlify.app)
+- Live Site URL: [https://manage-fg.netlify.app](https://manage-fg.netlify.app)
 
 ## Built with
 
