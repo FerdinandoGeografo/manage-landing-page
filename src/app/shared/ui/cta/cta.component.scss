@@ -16,7 +16,7 @@
     gap: 2rem;
 
     @include mixin.respond(desktop) {
-      padding-inline: 4.125rem;
+      padding-inline: 4.8rem;
     }
 
     @include mixin.respond(phone) {

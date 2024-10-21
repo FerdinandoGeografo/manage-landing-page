@@ -10,7 +10,7 @@
     grid-template-rows: auto auto;
 
     @include mixin.respond(desktop) {
-      padding-inline: 4.125rem;
+      padding-inline: 4.8rem;
     }
 
     @include mixin.respond(phone) {
@@ -35,6 +35,10 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 1.3rem;
+
+    @include mixin.respond(tablet) {
+      margin-left: 6.15rem;
+    }
 
     @include mixin.respond(phone) {
       grid-column: 1 / -1;
@@ -65,21 +69,22 @@
   }
 
   &__form {
-    width: 100%;
-    display: flex;
-    gap: 0.8rem;
-    align-self: start;
+    display: grid;
+    grid-template-columns: minmax(20rem, 1fr) minmax(min-content, 6.4rem);
+    place-self: self-start;
+    column-gap: 0.8rem;
     margin-top: 3px;
     position: relative;
 
     @include mixin.respond(phone) {
       margin: 0 0 5.4rem 0;
+      grid-template-columns: minmax(10rem, 1fr) minmax(min-content, 8rem);
+      place-self: stretch;
       order: 1;
     }
   }
 
   &__input {
-    flex: 1 0 20rem;
     font-family: inherit;
     font-weight: 300;
     letter-spacing: -0.1px;
@@ -88,10 +93,6 @@
     border-radius: 2.2rem;
     outline: 0 none;
     transition: all 0.3s;
-
-    @include mixin.respond(phone) {
-      flex: 1 1 23.9rem;
-    }
 
     &::placeholder {
       color: var(--gray-500);
@@ -117,7 +118,6 @@
   }
 
   &__btn {
-    flex: 1 0 6.4rem;
 
     @include mixin.respond(phone) {
       flex: 1 1 8rem;

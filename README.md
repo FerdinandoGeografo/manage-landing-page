@@ -8,9 +8,7 @@ This is a solution to the [Manage landing page challenge on Frontend Mentor](htt
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
+- [Built with](#built-with)
 - [Author](#author)
 
 ## Overview
@@ -28,16 +26,14 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![https://manage-fg.netlify.app/](./screenshot-desktop.jpg)
 
 ### Links
 
 - Solution URL: [https://github.com/FerdinandoGeografo/manage-landing-page.git](https://github.com/FerdinandoGeografo/manage-landing-page.git)
 - Live Site URL: [https://manage-fg.netlify.app](https://manage-fg-fg.netlify.app)
 
-## My process
-
-### Built with
+## Built with
 
 - Semantic HTML5 markup
 - SASS following 7-1 pattern and BEM conventions
@@ -46,15 +42,8 @@ Users should be able to:
 - Desktop-first workflow
 - [Angular](https://angular.dev/) - JS Framework
 
-### What I learned
-
 ## Author
 
 - Frontend Mentor - [@FerdinandoGeografo](https://www.frontendmentor.io/profile/FerdinandoGeografo)
 - LinkedIn - [@FerdinandoGeografo](https://www.linkedin.com/in/ferdinandogeografo/)
 - GitHub - [@FerdinandoGeografo](https://github.com/FerdinandoGeografo/)
-
-### TODO
-
-- Aggiustare le decoration con posizioni legate anche alla dimensione della viewport e agli elementi giusti e non al body
-- Compilare README, testing e deploy finale

@@ -22,7 +22,7 @@ import { ButtonComponent } from '../button/button.component';
       <div class="testimonials__slider">
         <div
           class="testimonials__list"
-          [style]="{ 'transform': 'translateX(-' + translateOffset() + ')' }"
+          [style]="{ 'transform': 'translateX(-' + '150px' + ')' }"
         >
           @for (testimonial of testimonials(); track $index) {
           <app-testimonial [testimonial]="testimonial" />
